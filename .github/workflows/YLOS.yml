@@ -12,6 +12,17 @@ on:
   repository_dispatch:
   workflow_dispatch:
     inputs:
+      REPO_BRANCH:
+        description: 'Lienol源码-请选择分支'
+        required: true
+        default: '22.03'
+        type: choice
+        options:
+          - '19.07'
+          - '21.02'
+          - '22.03'
+          - 'master'
+          - '19.07-test' 
       ssh:
         description: 'SSH connection to Actions'
         required: false
@@ -21,7 +32,7 @@ on:
 
 env:
   REPO_URL: https://github.com/Lienol/openwrt
-  REPO_BRANCH: 21.02
+  REPO_BRANCH: ${{ github.event.inputs.REPO_BRANCH }}
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: YLOS.config
   DIY_P1_SH: YLOS.sh
