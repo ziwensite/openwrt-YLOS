@@ -38,7 +38,7 @@ env:
   CONFIG_FILE: YLOS.config
   DIY_P1_SH: YLOS.sh
   DIY_P2_SH: YLOS2.sh
-  SSH_ACTIONS: ${{ github.event.inputs.SSH_ACTION }}
+  SSH_ACTION: ${{ github.event.inputs.SSH_ACTION }}
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
